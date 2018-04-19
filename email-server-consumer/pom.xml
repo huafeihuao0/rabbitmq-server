@@ -66,6 +66,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<!--【guava缓存】-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -77,6 +78,7 @@
 			<version>${commons-lang3.version}</version>
 		</dependency>
 
+		<!--【mail】-->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
