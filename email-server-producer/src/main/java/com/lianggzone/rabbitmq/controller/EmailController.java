@@ -9,25 +9,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-/**
- * <h3>概要:</h3><p>AuthorController</p>
- * <h3>功能:</h3><p>AuthorController</p>
- * <h3>履历:</h3>
- * <li>2016年12月13日  v0.1 版本内容: 新建</li>
- * @author 粱桂钊
- * @since 0.1
- */
+
+/***
+ *  【邮箱控制器】
+ * */
 @RestController()
 @RequestMapping(value = "/v1/emails")
-public class EmailController {
+public class EmailController
+{
 
     @Resource
     private EmailService emailService;
+
     /**
      * 新增方法
      */
     @RequestMapping(method = RequestMethod.POST)
-    public JSONObject add(@RequestBody JSONObject jsonObject) throws Exception {
+    public JSONObject add(@RequestBody JSONObject jsonObject) throws Exception
+    {
         /* json结构体
         {
             "to":"xxx@163.com",

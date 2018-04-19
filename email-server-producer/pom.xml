@@ -65,11 +65,13 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
+		<!--【fastjson】-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<!--【guaua】-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -81,6 +83,7 @@
 			<version>${commons-lang3.version}</version>
 		</dependency>
 
+		<!--【mail】-->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>

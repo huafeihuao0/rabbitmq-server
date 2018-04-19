@@ -10,20 +10,17 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-/**
- * <h3>概要:</h3><p>EmailServiceImpl</p>
- * <h3>功能:</h3><p>Email服务实现类</p>
- * <h3>履历:</h3>
- * <li>2017年6月8日  v0.1 版本内容: 新建</li>
- * @author 粱桂钊
- * @since 0.1
- */
-@Service
-public class EmailServiceImpl implements EmailService{
 
+/***
+ *  【邮箱服务接口实现】
+ * */
+@Service
+public class EmailServiceImpl
+        implements EmailService
+{
     private static Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 
-    @Resource( name = "rabbitTemplate" )
+    @Resource(name = "rabbitTemplate")
     private RabbitTemplate rabbitTemplate;
 
     @Value("${mq.exchange}")
@@ -33,10 +30,14 @@ public class EmailServiceImpl implements EmailService{
     private String routeKey;
 
     @Override
-    public void sendEmail(String message) throws Exception {
-        try {
+    public void sendEmail(String message) throws Exception
+    {
+        try
+        {
+            //使用RabbitMQ发送消息到队列
             rabbitTemplate.convertAndSend(exchange, routeKey, message);
-        }catch (Exception e){
+        } catch (Exception e)
+        {
             logger.error("EmailServiceImpl.sendEmail", ExceptionUtils.getMessage(e));
         }
     }
